@@ -299,15 +299,15 @@ Vamos criar um objeto para armazenar uma lista de mensagens de exemplo.
  object SampleData {
     val conversationSample = listOf(
         Message("Onofre", "Hoje o dia vai ser incrível!"),
-        Message("Bozanka", "Estou aprendendo muito neste universo."),
+        Message("Bozanka", "Estou aprendendo muito neste universo. E essa mensagem é muito grande para caber em uma única linha."),
         Message("Licurgo", "Cuidado com o Leopardo."),
         Message("Ovalino", "Obrigado por acreditarem em mim."),
-        Message("Cafiasparino", "Eu sou a flor silvestre que perfuma os campos!"),
+        Message("Cafiasparino", "Eu sou a flor silvestre que perfuma os campos! E essa mensagem é muito grande para caber em uma única linha.\"),"),
         Message("Ubelino", "Meu Amor... Aqui Está sua filha."),
         Message("Guilhermina", "Não contavam com a minha astúcia."),
         Message("Fedegunda", "Eu sou o mestre do universo!"),
         Message("Adamastor", "Chaves e Chapolin Colorado."),
-        Message("Aretha", "Se você é jovem ainda, jovem ainda, jovem ainda."),
+        Message("Aretha", "Se você é jovem ainda, jovem ainda, jovem ainda. E essa mensagem é muito grande para caber em uma única linha.\"),"),
         Message("Abeba", "Amanhã é um novo dia."),
         Message("Epaminondas", "Ao infinito e além!"),
     )
