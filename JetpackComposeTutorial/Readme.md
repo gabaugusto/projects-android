@@ -410,3 +410,13 @@ fun MessageCard(msg: Message) {
     }
 }
 ```
+
+## Próximos passos 
+
+Agora que você aprendeu o básico do Jetpack Compose, você pode explorar mais recursos e criar aplicativos mais complexos. Aqui estão algumas sugestões para continuar sua jornada:
+
+1. Altere o design do seu aplicativo para adicionar mais elementos de Material Design, como botões, caixas de diálogo e barras de aplicativos.
+
+2. Customizar a função messageCard para aceitar mais parâmetros, como uma imagem de perfil e um horário de envio.
+
+3. Adicione um campo de entrada de texto para permitir que os usuários enviem novas mensagens.
