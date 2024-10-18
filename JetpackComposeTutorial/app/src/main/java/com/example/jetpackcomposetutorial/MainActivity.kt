@@ -109,17 +109,17 @@ fun MessageCard(msg: Message) {
 object SampleData {
     val conversationSample = listOf(
         Message("Onofre", "Hoje o dia vai ser incrível!"),
-        Message("Onofre", "Estou aprendendo muito neste universo."),
-        Message("Onofre", "Cuidado com o Leopardo."),
-        Message("Onofre", "Obrigado por acreditarem em mim."),
-        Message("Onofre", "Hoje o dia vai ser incrível!"),
-        Message("Onofre", "Estou aprendendo muito neste universo."),
-        Message("Onofre", "Cuidado com o Leopardo."),
-        Message("Onofre", "Obrigado por acreditarem em mim."),
-        Message("Onofre", "Hoje o dia vai ser incrível!"),
-        Message("Onofre", "Estou aprendendo muito neste universo."),
-        Message("Onofre", "Cuidado com o Leopardo."),
-        Message("Onofre", "Obrigado por acreditarem em mim."),
+        Message("Bozanka", "Estou aprendendo muito neste universo."),
+        Message("Licurgo", "Cuidado com o Leopardo."),
+        Message("Ovalino", "Obrigado por acreditarem em mim."),
+        Message("Cafiasparino", "Eu sou a flor silvestre que perfuma os campos!"),
+        Message("Ubelino", "Meu Amor... Aqui Está sua filha."),
+        Message("Guilhermina", "Não contavam com a minha astúcia."),
+        Message("Fedegunda", "Eu sou o mestre do universo!"),
+        Message("Adamastor", "Chaves e Chapolin Colorado."),
+        Message("Aretha", "Se você é jovem ainda, jovem ainda, jovem ainda."),
+        Message("Abeba", "Amanhã é um novo dia."),
+        Message("Epaminondas", "Ao infinito e além!"),
     )
 }
 

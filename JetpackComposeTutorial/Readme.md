@@ -12,7 +12,7 @@ Para começar, utilize a versão mais recente do Android Studio e crie um aplica
 
 O Jetpack Compose é construído em torno de funções componíveis. Essas funções permitem que você defina a IU do seu aplicativo programaticamente, descrevendo como ela deve parecer e fornecendo dependências de dados, em vez de focar no processo de construção da IU (inicializar um elemento, anexá-lo a um pai, etc.). Para criar uma função componível, basta adicionar a anotação `@Composable` ao nome da função.
 
-![tutorial/lesson1-02.png](lesson1-02.png){width=250}
+![lesson1-02.png](tutorial/lesson1-02.png){width=250}
 
 ### Funções componíveis
 
@@ -44,7 +44,7 @@ A anotação `@Preview` permite que você visualize suas funções composable no
 
 Os elementos da IU são hierárquicos, com elementos contidos em outros elementos. No Compose, você cria uma hierarquia de IU chamando funções componíveis de outras funções componíveis.
 
-![tutorial/lesson2-01.svg](lesson2-01.svg){width=250}
+![lesson2-01.svg](tutorial/lesson2-01.svg){width=250}
 
 ### Adicione vários textos
 
@@ -124,7 +124,7 @@ fun MessageCard(msg: Message) {
 }
 ```	
 
-![tutorial/lesson2-05.png](lesson2-05.png)
+![lesson2-05.png](tutorial/lesson2-05.png){width=250}
 
 ### Configure seu layout
 
@@ -160,13 +160,13 @@ O layout da sua mensagem tem a estrutura correta, mas seus elementos não estão
 }
 ```
 
-![tutorial/lesson2-06.png](lesson2-06.png){width=250}
+![lesson2-06.png](tutorial/lesson2-06.png){width=250}
 
 ## Lição 3: Material Design
 
 O Compose foi criado para dar suporte aos princípios do Material Design. Muitos dos seus elementos de UI implementam o Material Design de fábrica. Nesta lição, você estilizará seu aplicativo com widgets do Material Design.
 
-![tutorial/lesson3-01.svg](lesson3-01.svg){width=250}
+![lesson3-01.svg](tutorial/lesson3-01.svg){width=250}
 
 ## Use Material Design
 
@@ -264,13 +264,13 @@ As opções de cores para os temas claro e escuro são definidas no arquivo `The
 
 Até agora, você criou um elemento de UI de mensagem que exibe uma imagem e dois textos com estilos diferentes, e fica bem tanto em temas claros quanto escuros!
 
-![tutorial/lesson3-07.png](lesson3-07.png){width=250}
+![lesson3-07.png](tutorial/lesson3-07.png){width=250}
 
 ## Lição 4: Listas e animações
 
 Listas e animações estão por toda parte nos aplicativos. Nesta lição, você aprenderá como o Compose facilita a criação de listas e torna divertido adicionar animações.
 
-![tutorial/lesson4-01.svg](lesson4-01.svg){width=250}
+![lesson4-01.svg](tutorial/lesson4-01.svg){width=250}
 
 ### Crie uma lista de mensagens
 
@@ -280,20 +280,21 @@ Vamos criar um objeto para armazenar uma lista de mensagens de exemplo.
 
 ```kotlin
 // `Criamos um objeto de amostra para simular dados de amostra`
-object SampleData {
+
+ object SampleData {
     val conversationSample = listOf(
         Message("Onofre", "Hoje o dia vai ser incrível!"),
         Message("Bozanka", "Estou aprendendo muito neste universo."),
-        Message("Licurgo", "Obrigado por acreditarem em mim."),
+        Message("Licurgo", "Cuidado com o Leopardo."),
         Message("Ovalino", "Obrigado por acreditarem em mim."),
-        Message("Cafiasparino", "Hoje o dia vai ser incrível!"),
-        Message("Ubelino", "Hoje o dia vai ser incrível!"),
-        Message("Guilhermina", "Estou aprendendo muito neste universo."),
-        Message("Fedegunda", "Cuidado com o Leopardo."),
-        Message("Adamastor", "Obrigado por acreditarem em mim."),
-        Message("Aretha", "Estou aprendendo muito neste universo."),
-        Message("Epaminondas", "Cuidado com o Leopardo."),
-        
+        Message("Cafiasparino", "Eu sou a flor silvestre que perfuma os campos!"),
+        Message("Ubelino", "Meu Amor... Aqui Está sua filha."),
+        Message("Guilhermina", "Não contavam com a minha astúcia."),
+        Message("Fedegunda", "Eu sou o mestre do universo!"),
+        Message("Adamastor", "Chaves e Chapolin Colorado."),
+        Message("Aretha", "Se você é jovem ainda, jovem ainda, jovem ainda."),
+        Message("Abeba", "Amanhã é um novo dia."),
+        Message("Epaminondas", "Ao infinito e além!"),
     )
 }
 ```
@@ -325,7 +326,7 @@ fun PreviewConversation() {
 }
 ```
 
-![tutorial/lesson4-02.png](lesson4-02.png){width=250}
+![lesson4-02.png](tutorial/lesson4-02.png){width=250}
 
 ## Animar mensagens enquanto elas se expandem
 
@@ -337,7 +338,7 @@ Ao usar as APIs de estado do Compose, como `remember` e `mutableStateOf`, quaisq
 
 Vídeo da animação:
 
-[![tutorial/Clique para exibir]](lesson4-03_m1.mp4)
+[![Clique para exibir]](tutorial/lesson4-03_m1.mp4)
 
 Agora você pode alterar o plano de fundo do conteúdo da mensagem com base em `isExpanded` quando clicamos em uma mensagem. Você usará o modificador clicável para manipular eventos de clique no composable. Em vez de apenas alternar a cor de fundo da `Surface`, você animará a cor de fundo modificando gradualmente seu valor de `MaterialTheme.colorScheme.surface` para MaterialTheme.`colorScheme.primary` e vice-versa. Para fazer isso, você usará a função `animateColorAsState`. Por fim, você usará o modificador `animateContentSize` para animar o tamanho do contêiner da mensagem suavemente:
 
