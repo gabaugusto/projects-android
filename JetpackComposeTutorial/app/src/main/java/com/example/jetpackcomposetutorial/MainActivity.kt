@@ -42,8 +42,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetpackComposeTutorialTheme {
-                Surface(modifier = Modifier.fillMaxSize()) {
-                    MessageCard(Message("Onofre", "Jetpack Compose"))
+                Surface {
+                    Conversation(messages = SampleData.conversationSample)
                 }
             }
         }
