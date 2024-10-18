@@ -354,7 +354,7 @@ Ao usar as APIs de estado do Compose, como `remember` e `mutableStateOf`, quaisq
 
 Vídeo da animação:
 
-[![Clique para exibir]](tutorial/lesson4-03_m1.mp4)
+[Clique para assistir](tutorial/lesson4-03_m3.mp4)
 
 Agora você pode alterar o plano de fundo do conteúdo da mensagem com base em `isExpanded` quando clicamos em uma mensagem. Você usará o modificador clicável para manipular eventos de clique no composable. Em vez de apenas alternar a cor de fundo da `Surface`, você animará a cor de fundo modificando gradualmente seu valor de `MaterialTheme.colorScheme.surface` para MaterialTheme.`colorScheme.primary` e vice-versa. Para fazer isso, você usará a função `animateColorAsState`. Por fim, você usará o modificador `animateContentSize` para animar o tamanho do contêiner da mensagem suavemente:
 
