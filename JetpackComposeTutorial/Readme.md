@@ -284,7 +284,7 @@ Até agora, você criou um elemento de UI de mensagem que exibe uma imagem e doi
 Listas e animações estão por toda parte nos aplicativos. Nesta lição, você aprenderá como o Compose facilita a criação de listas e torna divertido adicionar animações.
 
 <div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
-	<img src="tutorial/lesson4-01.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+	<img src="tutorial/lesson4-01.svg" style="margin:0 auto; width: 30vw; min-width: 250px;">
 </div>
 
 ### Crie uma lista de mensagens
