@@ -12,7 +12,9 @@ Para começar, utilize a versão mais recente do Android Studio e crie um aplica
 
 O Jetpack Compose é construído em torno de funções componíveis. Essas funções permitem que você defina a IU do seu aplicativo programaticamente, descrevendo como ela deve parecer e fornecendo dependências de dados, em vez de focar no processo de construção da IU (inicializar um elemento, anexá-lo a um pai, etc.). Para criar uma função componível, basta adicionar a anotação `@Composable` ao nome da função.
 
-![lesson1-02.png](tutorial/lesson1-02.png){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson1-02.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ### Funções componíveis
 
@@ -44,7 +46,9 @@ A anotação `@Preview` permite que você visualize suas funções composable no
 
 Os elementos da IU são hierárquicos, com elementos contidos em outros elementos. No Compose, você cria uma hierarquia de IU chamando funções componíveis de outras funções componíveis.
 
-![lesson2-01.svg](tutorial/lesson2-01.svg){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson2-01.svg" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ### Adicione vários textos
 
@@ -124,7 +128,9 @@ fun MessageCard(msg: Message) {
 }
 ```	
 
-![lesson2-05.png](tutorial/lesson2-05.png){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson2-05.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ### Configure seu layout
 
@@ -160,13 +166,18 @@ O layout da sua mensagem tem a estrutura correta, mas seus elementos não estão
 }
 ```
 
-![lesson2-06.png](tutorial/lesson2-06.png){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson2-06.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ## Lição 3: Material Design
 
 O Compose foi criado para dar suporte aos princípios do Material Design. Muitos dos seus elementos de UI implementam o Material Design de fábrica. Nesta lição, você estilizará seu aplicativo com widgets do Material Design.
 
-![lesson3-01.svg](tutorial/lesson3-01.svg){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson3-01.svg" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
+
 
 ## Use Material Design
 
@@ -264,13 +275,17 @@ As opções de cores para os temas claro e escuro são definidas no arquivo `The
 
 Até agora, você criou um elemento de UI de mensagem que exibe uma imagem e dois textos com estilos diferentes, e fica bem tanto em temas claros quanto escuros!
 
-![lesson3-07.png](tutorial/lesson3-07.png){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson3-07.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ## Lição 4: Listas e animações
 
 Listas e animações estão por toda parte nos aplicativos. Nesta lição, você aprenderá como o Compose facilita a criação de listas e torna divertido adicionar animações.
 
-![lesson4-01.svg](tutorial/lesson4-01.svg){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson4-01.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ### Crie uma lista de mensagens
 
@@ -325,8 +340,9 @@ fun PreviewConversation() {
     }
 }
 ```
-
-![lesson4-02.png](tutorial/lesson4-02.png){width=250}
+<div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
+	<img src="tutorial/lesson4-02.png" style="margin:0 auto; width: 30vw; min-width: 250px;">
+</div>
 
 ## Animar mensagens enquanto elas se expandem
 
