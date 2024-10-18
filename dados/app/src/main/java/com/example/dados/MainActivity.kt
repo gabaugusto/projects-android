@@ -74,6 +74,15 @@ fun Inicio(name: String, modifier: Modifier = Modifier) {
         else -> R.drawable.dice_6
     }
 
+    val listaNomes = when(sorteio){
+        1 -> "Mulher-Gato"
+        2 -> "Super-Boy"
+        3 -> "Cebolácio Menezes Júnior da Silva"
+        4 -> "Clarabela"
+        5 -> "Enliqueta"
+        else -> "Licurgo Ovalino Cafiaspirino Umbelino de Oliveira"
+    }
+
     Column (
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally, // Diferença entre Arrangement e Alignment: Arrangement é para o eixo principal, e Alignment é para o eixo secundário
