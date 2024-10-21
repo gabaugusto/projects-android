@@ -96,7 +96,7 @@ Este código cria dois elementos de texto dentro da visualização de conteúdo.
 
 Usando um layout `Column`, você pode organizar os elementos de texto verticalmente. O layout `Column` é um composable que coloca seus filhos em uma sequência vertical. Para usar o layout `Column`, envolva os elementos `Text` em um composable `Column`.
 
-Você pode usar Row para organizar itens horizontalmente e Box para empilhar elementos.
+Você pode usar `Row` para organizar itens horizontalmente e `Box` para empilhar elementos.
 
 ```kotlin
     Column {
@@ -171,7 +171,7 @@ O layout da sua mensagem tem a estrutura correta, mas seus elementos não estão
 
 ## Lição 3: Material Design
 
-O Compose foi criado para dar suporte aos princípios do Material Design. Muitos dos seus elementos de UI implementam o Material Design de fábrica. Nesta lição, você estilizará seu aplicativo com widgets do Material Design.
+O Compose foi criado para dar suporte aos princípios do [Material Design](https://m3.material.io/). Muitos dos seus elementos de UI implementam o Material Design "de fábrica". Nesta lição, você estilizará seu aplicativo com widgets do Material Design.
 
 <div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
 	<img src="tutorial/lesson3-01.svg" style="margin:0 auto; width: 30vw; min-width: 250px;">
@@ -182,9 +182,9 @@ O Compose foi criado para dar suporte aos princípios do Material Design. Muitos
 
 O design da sua mensagem agora tem um layout, mas ainda não está ótimo.
 
-O Jetpack Compose fornece uma implementação do Material Design 3 e seus elementos de UI prontos para uso. Você melhorará a aparência do nosso MessageCard composable usando o estilo Material Design.
+O Jetpack Compose fornece uma implementação do Material Design 3 e seus elementos de UI prontos para uso. Você melhorará a aparência do nosso `MessageCard` composable usando o estilo Material Design.
 
-Para começar, envolva a função MessageCard com o tema Material criado no seu projeto, ComposeTutorialTheme, bem como uma Surface. Faça isso tanto na função `@Preview` quanto na função setContent. Isso permitirá que seus composables herdem estilos conforme definido no tema do seu aplicativo, garantindo consistência em todo o seu aplicativo.
+Para começar, envolva a função `MessageCard` com o tema Material criado no seu projeto, `ComposeTutorialTheme`, bem como uma `Surface`. Faça isso tanto na função `@Preview` quanto na função `setContent`. Isso permitirá que seus composables herdem estilos conforme definido no tema do seu aplicativo, garantindo consistência em todo o seu aplicativo.
 
 O Material Design é construído em torno de três pilares: Cor, Tipografia e Forma. Você os adicionará um por um.
 
