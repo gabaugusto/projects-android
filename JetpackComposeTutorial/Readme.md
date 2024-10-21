@@ -6,11 +6,11 @@ O Jetpack Compose é um kit de ferramentas moderno para criar UI nativa do Andro
 
 Crie um projeto com o nome de `JetpackComposeTutorial` e selecione a linguagem `Kotlin` e o template `Empty Compose Activity`.
 
-Para começar, utilize a versão mais recente do Android Studio e crie um aplicativo selecionando Novo Projeto e, na categoria Telefone e Tablet, selecione Atividade Vazia. Nomeie seu aplicativo JetpackComposeTutorial e clique em Concluir. O template padrão já contém alguns elementos do Compose, mas neste tutorial você o criará passo a passo.
+Para começar, utilize a versão mais recente do Android Studio e crie um aplicativo selecionando Novo Projeto e, na categoria Telefone e Tablet, selecione Atividade Vazia. Nomeie seu aplicativo JetpackComposeTutorial e clique em __Concluir__. O template padrão já contém alguns elementos do Compose, mas neste tutorial você o criará passo a passo.
 
 ## Lição 1: Composables Functions
 
-O Jetpack Compose é construído em torno de funções componíveis. Essas funções permitem que você defina a interface do seu aplicativo programaticamente, descrevendo como ela deve parecer e fornecendo dependências de dados, em vez de focar no processo de construção da interface (inicializar um elemento, anexá-lo a um pai, etc.). Para criar uma função componível, basta adicionar a anotação `@Composable` ao nome da função.
+O Jetpack Compose é construído em torno de funções Composable. Essas funções permitem que você defina a interface do seu aplicativo programaticamente, descrevendo como ela deve parecer e fornecendo dependências de dados, em vez de focar no processo de construção da interface (inicializar um elemento, anexá-lo a um pai, etc.). Para criar uma função Composable, basta adicionar a anotação `@Composable` ao nome da função.
 
 Ao executar o projeto ou visualizar em previw, você verá a mensagem "Hello Android!" na tela. 
 
@@ -20,7 +20,7 @@ Ao executar o projeto ou visualizar em previw, você verá a mensagem "Hello And
 
 ### Defina uma função `@Composable`
 
-Para tornar uma função Composable, adicione a anotação `@Composable`. Para testar isso, defina uma função MessageCard que recebe um nome e a usa para configurar o elemento de texto.
+Para tornar uma função Composable, adicione a anotação `@Composable`. Para testar isso, defina uma função chamada `MessageCard` que recebe um nome e a usa para configurar o elemento de texto.
 
 ```kotlin
 // ...
@@ -40,7 +40,7 @@ fun PreviewMessageCard() {
 
 ### Visualize sua função no Android Studio
 
-A anotação `@Preview` permite que você visualize suas funções composable no Android Studio sem precisar compilar e instalar o aplicativo em um dispositivo Android ou emulador. A anotação deve ser usada em uma função composable que não aceite parâmetros. Por esse motivo, você não pode visualizar a função MessageCard diretamente. Em vez disso, crie uma segunda função chamada `PreviewMessageCard`, que chama `MessageCard` com um parâmetro apropriado. Adicione a anotação `@Preview` antes de `@Composable`.
+A anotação `@Preview` permite que você visualize suas funções Composable no Android Studio sem precisar compilar e instalar o aplicativo em um dispositivo Android ou emulador. A anotação deve ser usada em uma função Composable que não aceite parâmetros. Por esse motivo, você não pode visualizar a função MessageCard diretamente. Em vez disso, crie uma segunda função chamada `PreviewMessageCard`, que chama `MessageCard` com um parâmetro apropriado. Adicione a anotação `@Preview` antes de `@Composable`.
 
 ## Lição 2: Layouts
 
@@ -52,7 +52,7 @@ Os elementos de UI são hierárquicos, com elementos contidos em outros elemento
 
 ### Adicione vários textos
 
-Até agora você construiu sua primeira função componível e pré-visualização! Para descobrir mais recursos do Jetpack Compose, você construirá uma tela de mensagens simples contendo uma lista de mensagens que podem ser expandidas com **algumas** animações.
+Até agora você construiu sua primeira função Composable e pré-visualização! Para descobrir mais recursos do Jetpack Compose, você construirá uma tela de mensagens simples contendo uma lista de mensagens que podem ser expandidas com **algumas** animações.
 
 Comece tornando a mensagem mais rica exibindo o nome do autor e o conteúdo da mensagem. Você precisa primeiro alterar o parâmetro para aceitar um objeto `Message` em vez de uma `String` e adicionar outra função `Text` dentro da função `MessageCard`. Certifique-se de atualizar a pré-visualização também.
 
@@ -94,7 +94,7 @@ Este código cria dois elementos de texto dentro da visualização de conteúdo.
 
 ### Adicione um layout
 
-Usando um layout `Column`, você pode organizar os elementos de texto verticalmente. O layout `Column` é um composable que coloca seus filhos em uma sequência vertical. Para usar o layout `Column`, envolva os elementos `Text` em um composable `Column`.
+Usando um layout `Column`, você pode organizar os elementos de texto verticalmente. O layout `Column` é uma função Composable que coloca seus filhos em uma sequência vertical. Para usar o layout `Column`, envolva os elementos `Text` em uma Composable `Column`.
 
 Você pode usar `Row` para organizar itens horizontalmente e `Box` para empilhar elementos.
 
@@ -133,7 +133,7 @@ fun MessageCard(msg: Message) {
 
 ### Configure seu layout
 
-O layout da sua mensagem tem a estrutura correta, mas seus elementos não estão bem espaçados e a imagem é muito grande! Para decorar ou configurar um composable, o Compose usa modificadores. Eles permitem que você altere o tamanho, o layout, a aparência do composable ou adicione interações de alto nível, como tornar um elemento clicável. Você pode encadeá-los para criar composables mais ricos. Você usará alguns deles para melhorar o layout.
+O layout da sua mensagem tem a estrutura correta, mas seus elementos não estão bem espaçados e a imagem é muito grande! Para decorar ou configurar uma função Composable, o Compose usa modificadores. Eles permitem que você altere o tamanho, o layout, a aparência do elemento gerado pelo Composable ou adicione interações de alto nível, como tornar um elemento clicável. Você pode encadeá-los para criar Composables mais ricos. Você usará alguns deles para melhorar o layout.
 
 ```kotlin
     // Função MessageCard
@@ -171,7 +171,7 @@ O layout da sua mensagem tem a estrutura correta, mas seus elementos não estão
 
 ## Lição 3: Material Design
 
-O Compose foi criado para dar suporte aos princípios do [Material Design](https://m3.material.io/). Muitos dos seus elementos de UI implementam o Material Design "de fábrica". Nesta lição, você estilizará seu aplicativo com widgets do Material Design.
+O Compose foi criado para dar suporte aos princípios do [Material Design](https://m3.material.io/). Muitos dos seus elementos de UI implementam o **Material Design** "de fábrica". Nesta lição, você estilizará seu aplicativo com widgets do **Material Design**.
 
 <div style="width:100%; display:flex; background:#cccccc; margin-bottom: 10px;">
 	<img src="tutorial/lesson3-01.svg" style="margin:0 auto; width: 30vw; min-width: 250px;">
@@ -182,11 +182,29 @@ O Compose foi criado para dar suporte aos princípios do [Material Design](https
 
 O design da sua mensagem agora tem um layout, mas ainda não está ótimo.
 
-O Jetpack Compose fornece uma implementação do Material Design 3 e seus elementos de UI prontos para uso. Você melhorará a aparência do nosso `MessageCard` composable usando o estilo Material Design.
+O Jetpack Compose fornece uma implementação do **Material Design 3** e seus elementos de UI prontos para uso. Você melhorará a aparência do nosso `MessageCard` usando o estilo **Material Design**.
+
+
+O **Material Design** é construído em torno de três pilares: Cor, Tipografia e Forma. Você os adicionará um por um.
 
 Para começar, envolva a função `MessageCard` com o tema Material criado no seu projeto, `ComposeTutorialTheme`, bem como uma `Surface`. Faça isso tanto na função `@Preview` quanto na função `setContent`. Isso permitirá que seus composables herdem estilos conforme definido no tema do seu aplicativo, garantindo consistência em todo o seu aplicativo.
 
-O Material Design é construído em torno de três pilares: Cor, Tipografia e Forma. Você os adicionará um por um.
+Exemplo de como ficará o código:
+
+```kotlin
+import androidx.compose.material.Surface
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+
+@Composable
+ComposeTutorialTheme {
+    MessageCard(
+        msg = Message("Onofre", "Olha só o que eu fiz!")
+    )
+}
+
+```
 
 **Observação:** o modelo Empty Compose Activity gera um tema padrão para seu projeto que permite que você personalize o `MaterialTheme`. Se você nomeou seu projeto de algo diferente de `JetpackComposeTutorial`, você pode encontrar seu tema personalizado no arquivo `Theme.kt` no subpacote `ui.theme`.
 
@@ -243,7 +261,7 @@ fun MessageCard(msg: Message) {
 
 ### Habilitar o tema escuro 
 
-Quando necessário, o tema escuro (ou modo noturno) pode ser habilitado para evitar uma tela brilhante, especialmente à noite, ou simplesmente para economizar a bateria do dispositivo. Graças ao suporte do Material Design, o Jetpack Compose pode lidar com o tema escuro por padrão. Tendo usado cores, texto e fundos do Material Design se adaptarão automaticamente ao fundo escuro.
+Quando necessário, o tema escuro (ou modo noturno) pode ser habilitado para evitar uma tela brilhante, especialmente à noite, ou simplesmente para economizar a bateria do dispositivo. Graças ao suporte do **Material Design**, o Jetpack Compose pode lidar com o tema escuro por padrão. Tendo usado cores, texto e fundos do **Material Design** se adaptarão automaticamente ao fundo escuro.
 
 Você pode criar várias visualizações em seu arquivo como funções separadas ou adicionar várias anotações à mesma função.
 
@@ -347,15 +365,17 @@ fun PreviewConversation() {
 
 ## Animar mensagens enquanto elas se expandem
 
-A conversa está ficando mais interessante. É hora de brincar com animações! Você adicionará a capacidade de expandir uma mensagem para mostrar uma mais longa, animando o tamanho do conteúdo e a cor de fundo. Para armazenar esse estado da UI local, você precisa controlar se uma mensagem foi expandida ou não. Para controlar essa mudança de estado, você precisa usar as funções `remember` e `mutableStateOf`.
+A conversa está ficando mais interessante. 
 
-As funções composable podem armazenar o estado local na memória usando `remember` e rastrear as alterações no valor passado para `mutableStateOf`. Composables (e seus filhos) usando esse estado serão redesenhados automaticamente quando o valor for atualizado. Isso é chamado de **recomposição** ("recomposotion" em inglês).
+É hora de brincar com animações! 
 
-Ao usar as APIs de estado do Compose, como `remember` e `mutableStateOf`, quaisquer alterações no estado atualizam automaticamente a interface.
+Você adicionará a capacidade de expandir uma mensagem para mostrar uma mais longa, animando o tamanho do conteúdo e a cor de fundo. Para armazenar esse estado da UI local, você precisa controlar se uma mensagem foi expandida ou não. Para controlar essa mudança de estado, você precisa usar as funções `remember` e `mutableStateOf`.
 
-Vídeo da animação:
+As funções Composables podem armazenar o estado local na memória usando `remember` e rastrear as alterações no valor passado para `mutableStateOf`. Funções Composables (e seus filhos) usando esse estado serão redesenhados automaticamente quando o valor for atualizado. Isso é chamado de **recomposição** ("recomposotion" em inglês).
 
-[Clique para assistir](tutorial/lesson4-03_m3.mp4)
+Ao usar as APIs de estado do Compose, como `remember` e `mutableStateOf`, **quaisquer alterações no estado atualizam automaticamente a interface**.
+
+[Vídeo com o código aplicado](tutorial/lesson4-03_m3.mp4)
 
 Agora você pode alterar o plano de fundo do conteúdo da mensagem com base em `isExpanded` quando clicamos em uma mensagem. Você usará o modificador clicável para manipular eventos de clique na função. Em vez de apenas alternar a cor de fundo da `Surface`, você animará a cor de fundo modificando gradualmente seu valor de `MaterialTheme.colorScheme.surface` para MaterialTheme.`colorScheme.primary` e vice-versa. Para fazer isso, você usará a função `animateColorAsState`. Por fim, você usará o modificador `animateContentSize` para animar o tamanho do contêiner da mensagem suavemente:
 
@@ -416,8 +436,9 @@ fun MessageCard(msg: Message) {
 
 Agora que você aprendeu o básico do Jetpack Compose, você pode explorar mais recursos e criar aplicativos mais complexos. Aqui estão algumas sugestões para continuar sua jornada:
 
-1. Altere o design do seu aplicativo para adicionar mais elementos de Material Design, como botões, caixas de diálogo e barras de aplicativos.
+1. Altere o design do seu aplicativo para adicionar mais elementos de **Material Design**, como botões, caixas de diálogo e barras de aplicativos.
 
 2. Customizar a função messageCard para aceitar mais parâmetros, como uma imagem de perfil e um horário de envio.
 
 3. Adicione um campo de entrada de texto para permitir que os usuários enviem novas mensagens.
+O `OutlinedTextField` do **Material Design** é um bom começo.
