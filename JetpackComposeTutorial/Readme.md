@@ -1,4 +1,4 @@
-# Tutorial Básico Jetpack Compose
+# Tutorial Básico de Desenvolvimento Mobile com Jetpack Compose
 
 O Jetpack Compose é um kit de ferramentas moderno para criar UI nativa do Android. O Jetpack Compose simplifica e acelera o desenvolvimento de UI no Android com menos código, ferramentas poderosas e APIs Kotlin intuitivas.
 
@@ -10,7 +10,7 @@ Para começar, utilize a versão mais recente do Android Studio e crie um aplica
 
 ## Lição 1: Composables Functions
 
-O Jetpack Compose é construído em torno de funções componíveis. Essas funções permitem que você defina a IU do seu aplicativo programaticamente, descrevendo como ela deve parecer e fornecendo dependências de dados, em vez de focar no processo de construção da IU (inicializar um elemento, anexá-lo a um pai, etc.). Para criar uma função componível, basta adicionar a anotação `@Composable` ao nome da função.
+O Jetpack Compose é construído em torno de funções componíveis. Essas funções permitem que você defina a interface do seu aplicativo programaticamente, descrevendo como ela deve parecer e fornecendo dependências de dados, em vez de focar no processo de construção da interface (inicializar um elemento, anexá-lo a um pai, etc.). Para criar uma função componível, basta adicionar a anotação `@Composable` ao nome da função.
 
 Ao executar o projeto ou visualizar em previw, você verá a mensagem "Hello Android!" na tela. 
 
@@ -40,7 +40,7 @@ fun PreviewMessageCard() {
 
 ### Visualize sua função no Android Studio
 
-A anotação `@Preview` permite que você visualize suas funções composable no Android Studio sem precisar compilar e instalar o aplicativo em um dispositivo Android ou emulador. A anotação deve ser usada em uma função composable que não aceite parâmetros. Por esse motivo, você não pode visualizar a função MessageCard diretamente. Em vez disso, crie uma segunda função chamada `PreviewMessageCard`, que chama `MessageCard` com um parâmetro apropriado. Adicione a anotação @Preview antes de `@Composable`.
+A anotação `@Preview` permite que você visualize suas funções composable no Android Studio sem precisar compilar e instalar o aplicativo em um dispositivo Android ou emulador. A anotação deve ser usada em uma função composable que não aceite parâmetros. Por esse motivo, você não pode visualizar a função MessageCard diretamente. Em vez disso, crie uma segunda função chamada `PreviewMessageCard`, que chama `MessageCard` com um parâmetro apropriado. Adicione a anotação `@Preview` antes de `@Composable`.
 
 ## Lição 2: Layouts
 
@@ -184,7 +184,7 @@ O design da sua mensagem agora tem um layout, mas ainda não está ótimo.
 
 O Jetpack Compose fornece uma implementação do Material Design 3 e seus elementos de UI prontos para uso. Você melhorará a aparência do nosso MessageCard composable usando o estilo Material Design.
 
-Para começar, envolva a função MessageCard com o tema Material criado no seu projeto, ComposeTutorialTheme, bem como uma Surface. Faça isso tanto na função @Preview quanto na função setContent. Isso permitirá que seus composables herdem estilos conforme definido no tema do seu aplicativo, garantindo consistência em todo o seu aplicativo.
+Para começar, envolva a função MessageCard com o tema Material criado no seu projeto, ComposeTutorialTheme, bem como uma Surface. Faça isso tanto na função `@Preview` quanto na função setContent. Isso permitirá que seus composables herdem estilos conforme definido no tema do seu aplicativo, garantindo consistência em todo o seu aplicativo.
 
 O Material Design é construído em torno de três pilares: Cor, Tipografia e Forma. Você os adicionará um por um.
 
