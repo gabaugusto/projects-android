@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "formas-proibidas"
 include(":app")
- 
