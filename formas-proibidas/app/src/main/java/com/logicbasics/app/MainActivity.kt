@@ -72,18 +72,21 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Inicio() {
 
-
-
     val navController = rememberNavController() // Cria uma instância do NavController
 
     val currentDestination = navController.currentBackStackEntryAsState().value?.destination?.route
 
+    var paginas_com_barra_superior = listOf("circulo", "home")
+
     Scaffold(
         topBar = {
+
             TopAppBar(
                 title = {
                     if (currentDestination == "circulo") {
                         Text("Círculo")
+                    } else if (currentDestination == "home") {
+                        Text("Bem-vindo ao Portal das Formas")
                     } else {
                         Text("Portal das Formas")
                     }
@@ -93,17 +96,21 @@ fun Inicio() {
                     if (currentDestination == "circulo") {
 
                         IconButton(onClick = { navController.popBackStack() }) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Voltar")
+                            Icon(
+                                Icons.AutoMirrored.Filled.ArrowBack,
+                                contentDescription = "Voltar"
+                            )
                         }
 
                     } else if (currentDestination == "home") {
-                        IconButton(onClick = { navController.popBackStack() }) {
+                        IconButton(onClick = { navController.navigate("login") }) {
                             Icon(Icons.AutoMirrored.Filled.List, contentDescription = "Lista")
                         }
 
                     } else null
                 }
             )
+
         },
         modifier = Modifier.fillMaxSize(),
         content = { innerPadding ->
@@ -137,7 +144,8 @@ fun Inicio() {
                     IconButton(onClick = { /* do something */ }) {
                         Icon(
                             Icons.Filled.Check,
-                            contentDescription = "Localized description")
+                            contentDescription = "Localized description"
+                        )
                     }
                     IconButton(onClick = { /* do something */ }) {
                         Icon(
@@ -163,99 +171,42 @@ fun Inicio() {
     )
 }
 
-@Composable
-fun ConteudoCirculo(navController: NavController) {
-    val navController = rememberNavController() // Cria uma instância do NavController
-
-    // Regras de negócio
-    var raio by remember { mutableStateOf("") }
-    var area by remember { mutableStateOf<Double?>(null) }
-
-    Column {
-
-        Spacer(modifier = Modifier.padding(top = 32.dp))
-
-        Text("Circulo")
-        Text(
-            "A geometria serve como a linguagem fundamental do mundo físico, uma lente matemática profunda através da qual compreendemos formas, estruturas e relações espaciais. Da elegância dos padrões simétricos à complexidade das formas geométricas, a geometria permanece como uma ferramenta indispensável, moldando tanto o nosso intelecto como o mundo tangível que habitamos.\n" +
-                    "\n"
-        )
-
-        Column (
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-
-            OutlinedTextField(
-                value = raio,
-                onValueChange = {
-                    // OnValueChange é chamado toda vez que o valor do campo de texto é alterado
-                    // it é o valor do campo de texto (raio)
-                    raio = it
-                    area = if (raio.isNotEmpty()) Math.PI * raio.toDouble() * raio.toDouble() else 0.0
-                },
-                keyboardOptions = KeyboardOptions.Default.copy(
-                    keyboardType = KeyboardType.Number
-                ),
-                label = { Text("Digite o raio") },
-                modifier = Modifier.padding(16.dp)
-                    .fillMaxWidth()
-            )
-
-            Button(
-                onClick = {
-                    area = if (raio.isNotEmpty()) Math.PI * raio.toDouble() * raio.toDouble() else 0.0
-                },
-                modifier = Modifier.padding(16.dp)
-            ) {
-                Text("Calcular Área")
-            }
-
-
-        }
-        Spacer(modifier = Modifier.padding(top = 16.dp))
-
-
-        Text("Área: $area")
-
-    }
-}
-
-
 
 @Composable
 fun ConteudoLogin(navController: NavController, innerPadding: PaddingValues) {
-    Text(
-        text = "Bem-vindo ao Portal das Formas"
-    )
+    Column {
+        Text(
+            text = "Bem-vindo ao Portal das Formas"
+        )
 
-    Button(
-        onClick = {
-                     navController.navigate("home")
-                  },
-        modifier = Modifier.padding(16.dp)
-    ) {
-        Text("Login")
-    }
+        Button(
+            onClick = {
+                navController.navigate("home")
+            },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text("Home")
+        }
 
-    Button(
-        onClick = {
-            navController.navigate("circulo")
-        },
-        modifier = Modifier.padding(16.dp)
-    ) {
-        Text("Login")
+        Button(
+            onClick = {
+                navController.navigate("circulo")
+            },
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text("Circulo")
+        }
     }
 }
 
 @Composable
 fun Home(navController: NavController) {
 
-    Row{
+    Row {
         Box(
-            modifier = Modifier.padding(16.dp)
-                               .background(color = Color.Yellow)
+            modifier = Modifier
+                .padding(16.dp)
+                .background(color = Color.Yellow)
         ) {
             Button(
                 onClick = {
@@ -266,8 +217,9 @@ fun Home(navController: NavController) {
             }
         }
         Box(
-            modifier = Modifier.padding(16.dp)
-                               .background(color = Color.Red)
+            modifier = Modifier
+                .padding(16.dp)
+                .background(color = Color.Red)
         ) {
             Button(
                 onClick = {
@@ -278,8 +230,9 @@ fun Home(navController: NavController) {
             }
         }
         Box(
-            modifier = Modifier.padding(24.dp)
-                               .background(color = Color.Blue)
+            modifier = Modifier
+                .padding(24.dp)
+                .background(color = Color.Blue)
         ) {
             Button(
                 onClick = {
@@ -290,8 +243,9 @@ fun Home(navController: NavController) {
             }
         }
         Box(
-            modifier = Modifier.padding(32.dp)
-                               .background(color = Color.Green)
+            modifier = Modifier
+                .padding(32.dp)
+                .background(color = Color.Green)
         ) {
             Button(
                 onClick = {
@@ -302,8 +256,9 @@ fun Home(navController: NavController) {
             }
         }
         Box(
-            modifier = Modifier.padding(36.dp)
-                               .background(color = Color.Cyan)
+            modifier = Modifier
+                .padding(36.dp)
+                .background(color = Color.Cyan)
         ) {
             Button(
                 onClick = {
