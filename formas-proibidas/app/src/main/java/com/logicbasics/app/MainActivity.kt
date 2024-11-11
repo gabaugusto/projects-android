@@ -43,6 +43,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.logicbasics.app.ui.theme.FormasproibidasTheme
 import android.media.MediaPlayer
+import android.widget.Toast
+import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.platform.LocalContext
 
 class MainActivity : ComponentActivity() {
@@ -64,8 +68,6 @@ fun Inicio() {
     val navController = rememberNavController() // Cria uma instância do NavController
 
     val currentDestination = navController.currentBackStackEntryAsState().value?.destination?.route
-
-    var paginas_com_barra_superior = listOf("circulo", "home")
 
     Scaffold(
         topBar = {
@@ -179,25 +181,38 @@ fun ConteudoLogin(navController: NavController, innerPadding: PaddingValues, con
             onClick = {
                 navController.navigate("home")
             },
+
+            shape = RoundedCornerShape(120.dp),
             modifier = Modifier.padding(16.dp)
         ) {
-            Text("Home")
+            Text("Login")
         }
 
         Button(
             onClick = {
-                navController.navigate("circulo")
-            },
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text("Circulo")
-        }
+                        Toast.makeText(context, "You clicked on Elevated Button", Toast.LENGTH_SHORT).show()
+                      },
+                    elevation = ButtonDefaults.elevatedButtonElevation(
+                        defaultElevation = 10.dp,
+                        pressedElevation = 20.dp,
+                        disabledElevation = 4.dp
+                    ),
+                    shape = RoundedCornerShape(8.dp),
+                    modifier = Modifier
+
+                        .padding(16.dp)
+
+                ) {
+                    Text("Circulo")
+            }
 
         Button (
             onClick = {
                 mediaPlayer.start()
             },
+            shape = CutCornerShape(4.dp),
             modifier = Modifier.padding(16.dp)
+
         ){
             Text("Play")
         }
