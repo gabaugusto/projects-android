@@ -1,32 +1,37 @@
 package com.sonsdavida.app
 
-import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.CountDownTimer
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.BasicText
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.delay
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.platform.LocalContext
 import com.sonsdavida.app.ui.theme.SonsTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,14 +48,24 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun WhiteNoise() {
-    Column(
+    Row (
         modifier = Modifier.fillMaxSize(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
+    ) {}
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("Selecione um som para ajudar o bebê a dormir", fontSize = 20.sp, style = MaterialTheme.typography.titleMedium)
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier
+            .height(16.dp)
+            .border(width = 1.dp, color = MaterialTheme.colorScheme.onSurface)
+        )
 
         SoundButton("Som de Ventilador", R.drawable.icon_fan, R.raw.fan)
         Spacer(modifier = Modifier.height(8.dp))
@@ -67,20 +82,31 @@ fun WhiteNoise() {
 
 @Composable
 fun SoundButton(label: String, iconResId: Int, soundResId: Int) {
-    var isPlaying by remember { mutableStateOf(false) }
+    // remember é uma função que armazena um valor e o mantém entre recomposições
+    // estaTocando é um valor booleano que indica se o som está sendo reproduzido.
+    var estaTocando by remember { mutableStateOf(false) }
+
+    // context é uma variável que armazena o contexto atual ou seja a Activity atual
     val context = LocalContext.current
-    val mediaPlayer = remember { MediaPlayer.create(context, soundResId) }
+
+    // ruido branco é um recurso de MediaPlayer que reproduz o som
+    val ruidoBranco = remember { MediaPlayer.create(context, soundResId) }
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .clickable {
-                isPlaying = if (isPlaying) {
-                    mediaPlayer.pause()
-                    false
+            .clickable { // clickable é um modificador que torna o Composable clicável
+                estaTocando = if (estaTocando) {
+                    // pause é uma função que pausa a reprodução do som
+                    // pause é diferente de stop porque mantém o recurso de MediaPlayer ativo
+                    // Isso significa que o som pode ser retomado de onde parou, mas também que continua ocupando memória
+                    // Já com o stop o recurso de MediaPlayer é liberado e o som não pode ser retomado
+                    ruidoBranco.pause()
+                    false // o valor de estaTocando é alterado para false
                 } else {
-                    mediaPlayer.start()
-                    true
+                    // Start é uma função que inicia a reprodução do som OU reinicia caso o som esteja parado.
+                    ruidoBranco.start()
+                    true // o valor de estaTocando é alterado para true
                 }
             }
             .padding(16.dp)
@@ -91,15 +117,15 @@ fun SoundButton(label: String, iconResId: Int, soundResId: Int) {
             modifier = Modifier.size(48.dp)
         )
         Spacer(modifier = Modifier.width(16.dp))
-        Text(label, fontSize = 18.sp, style = MaterialTheme.typography.bodyLarge)
+        Text(label, fontSize = 18.sp,
+            style = MaterialTheme.typography.bodyLarge)
     }
 
     // DisposableEffect é um efeito que é executado quando o Composable é criado e é descartado quando o Composable é removido
     // Aqui estamos liberando o recurso de MediaPlayer quando o Composable é removido assim evitando memory leaks (despejo de memória) por não liberar recursos
-
     DisposableEffect(Unit) {
         onDispose {
-            mediaPlayer.release()
+            ruidoBranco.release()
         }
     }
 }
